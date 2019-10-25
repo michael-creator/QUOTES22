@@ -7,5 +7,8 @@ import { Quote } from '@angular/compiler';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-Jokerquotes = 'Smile, because it confuses people. Smile, because its easier than explaining what is killing you inside'
+drunkquotes: string[];
+constructor(){
+  this.drunkquotes = ['Smile, because it confuses people. Smile, because its easier than explaining what is killing you inside','I feel bad for people who don’t drink. When they wake up in the morning, that’s as good as they’re going to feel all day.','A drunk man’s words are a sober man’s thoughts.']
+}
 }
