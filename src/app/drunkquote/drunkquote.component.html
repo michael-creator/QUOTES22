@@ -5,11 +5,12 @@
     <img width="300" alt="Angular Logo" src="/assets/image/drunk.gif">
   </div>
   <div>
-   
-    <ul>
-        <li *ngFor='let drunkquote of drunkquotes'>
-          {{drunkquote.name}}
-        </li>
-    </ul>
-    <p *ngIf='drunkquotes.length > 8'>Your drunkquotes are too many</p>
+    <hr>
+<ul>
+  <div *ngFor='let drunkquote of drunkquotes;let i = index'>
+    <li>{{drunkquote.name}}</li>
+    <button (click)='toggleDetail(i)'>Toggle Details</button>
+    <app-drunkquote-detail *ngIf='drunkquote.showDescription' [drunkquote]='drunkquote'></app-drunkquote-detail>
   </div>
+</ul>
+<p *ngIf='drunkquotes.length > 5'>You have too many drunkquotes</p>
