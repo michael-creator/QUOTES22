@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DrunkquoteComponent } from './drunkquote/drunkquote.component';
 import { DrunkquoteDetailComponent } from './drunkquote-detail/drunkquote-detail.component';
+import { StrikethroughDirective } from './strikethrough.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DrunkquoteComponent,
-    DrunkquoteDetailComponent
+    DrunkquoteDetailComponent,
+    StrikethroughDirective
   ],
   imports: [
     BrowserModule,

@@ -19,8 +19,14 @@ export class DrunkquoteComponent implements OnInit {
   toggleDetails(index){
     this.drunkquotes[index].showDescription = !this.drunkquotes[index].showDescription;
   }
+  completeDrunkquote(isComplete, index){
+    if (isComplete) {
+      this.drunkquotes.splice(index,1);
+    }
+  }
+  
   constructor() { }
-
+ 
   ngOnInit() {
   }
 

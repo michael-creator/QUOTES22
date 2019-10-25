@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 import { Drunkquote } from '../drunkquote';
 @Component({
   selector: 'app-drunkquote-detail',
@@ -7,6 +7,11 @@ import { Drunkquote } from '../drunkquote';
 })
 export class DrunkquoteDetailComponent implements OnInit {
 @Input() drunkquote: Drunkquote
+@Output() isComplete = new EventEmitter<boolean>();
+
+drunkquoteComplete(complete:boolean){
+  this.isComplete.emit(complete);
+}
   constructor() { }
 
   ngOnInit() {
