@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Quote } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'QUOTES';
+Jokerquotes = 'Smile, because it confuses people. Smile, because its easier than explaining what is killing you inside'
 }
