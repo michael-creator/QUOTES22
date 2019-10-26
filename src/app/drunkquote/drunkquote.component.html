@@ -1,10 +1,10 @@
 <h1>My Drunkquotes</h1>
 <ul>
-    <div *ngFor='let drunkquote of drunkquotes;let i = index'>
-        <li appStrikethrough>{{drunkquote.name}}</li>
+      <div *ngFor='let drunkquote of drunkquotes;let i = index'>
+        <li appStrikethrough>{{drunkquote.name}} due on {{drunkquote.completeDate|date|uppercase}}</li>
         <button  (click)='toggleDetails(i)'>Toggle Details</button>
 
-    <app-drunkquote-detail *ngIf="drunkquote.showDescription" [drunkquote]='drunkquote' (isComplete)= 'completeDrunkquote($event,i)'></app-drunkquote-detail>
+    <app-drunkquote-detail *ngIf="drunkquote.showDescription" [drunkquote]='drunkquote' (isComplete)= 'deleteDrunkquote($event,i)'></app-drunkquote-detail>
     
     </div>
 </ul>

@@ -9,7 +9,7 @@ export class DrunkquoteDetailComponent implements OnInit {
 @Input() drunkquote: Drunkquote
 @Output() isComplete = new EventEmitter<boolean>();
 
-drunkquoteComplete(complete:boolean){
+drunkquoteDelete(complete:boolean){
   this.isComplete.emit(complete);
 }
   constructor() { }

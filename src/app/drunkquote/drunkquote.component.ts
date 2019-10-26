@@ -19,9 +19,13 @@ export class DrunkquoteComponent implements OnInit {
   toggleDetails(index){
     this.drunkquotes[index].showDescription = !this.drunkquotes[index].showDescription;
   }
-  completeDrunkquote(isComplete, index){
+  deleteDrunkquote(isComplete, index){
     if (isComplete) {
-      this.drunkquotes.splice(index,1);
+      let toDelete = confirm(`Are you sure you want to delete ${this.drunkquotes[index].name}?`)
+
+      if (toDelete){
+        this.drunkquotes.splice(index,1)
+      }
     }
   }
   
