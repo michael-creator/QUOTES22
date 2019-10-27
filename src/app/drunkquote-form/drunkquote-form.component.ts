@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Drunkquote } from './../drunkquote';
+import { Component, OnInit } from '@angular/core'
+
 
 @Component({
   selector: 'app-drunkquote-form',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./drunkquote-form.component.css']
 })
 export class DrunkquoteFormComponent implements OnInit {
-
+  newDrunkquote = new Drunkquote(0,"","",new Date());
   constructor() { }
 
   ngOnInit() {
