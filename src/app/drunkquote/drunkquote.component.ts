@@ -16,6 +16,12 @@ export class DrunkquoteComponent implements OnInit {
     new Drunkquote(4,'Benjamin Franklin','In wine there is wisdom, in beer there is Freedom, in water there is bacteria.',new Date(2019,10,9)),
     new Drunkquote(5,'Winston S. Churchill','A lady came up to me one day and said ‘Sir! You are drunk’, to which I replied ‘I am drunk today madam, and tomorrow I shall be sober, but you will still be ugly.',new Date(2019,10,9)),
   ];
+  addNewDrunkquote(drunkquote){
+    let drunkquoteLength = this.drunkquotes.length;
+    drunkquote.id = drunkquoteLength+1;
+    drunkquote.completeDate = new Date(drunkquote.completeDate)
+    this.drunkquotes.push(drunkquote)
+  }
   toggleDetails(index){
     this.drunkquotes[index].showDescription = !this.drunkquotes[index].showDescription;
   }
