@@ -16,8 +16,8 @@
       </div>
     </div>
     <div class="col-md-6">
-      <app-drunkquote-form></app-drunkquote-form>
-    </div>
+      <app-drunkquote-form (addDrunkquote)="addNewDrunkquote($event)"></app-drunkquote-form>
+ </div>
   </div>
   <p *ngIf='drunkquotes.length > 7'>You have too many drunkquotes</p>
 </div>
