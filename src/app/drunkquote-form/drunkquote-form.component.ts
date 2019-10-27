@@ -1,5 +1,5 @@
 import { Drunkquote } from './../drunkquote';
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Output, EventEmitter } from '@angular/core'
 
 
 @Component({
@@ -9,6 +9,11 @@ import { Component, OnInit } from '@angular/core'
 })
 export class DrunkquoteFormComponent implements OnInit {
   newDrunkquote = new Drunkquote(0,"","",new Date());
+  @Output() addDrunkquote = new EventEmitter<Drunkquote>();
+  submitDrunkquote(){
+  this.addDrunkquote.emit(this.newDrunkquote)
+}
+
   constructor() { }
 
   ngOnInit() {
