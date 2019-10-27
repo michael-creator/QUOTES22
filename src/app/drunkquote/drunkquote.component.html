@@ -1,11 +1,21 @@
-<h1>My Drunkquotes</h1>
-<ul>
-      <div *ngFor='let drunkquote of drunkquotes;let i = index'>
-        <li appStrikethrough>{{drunkquote.name}} due on {{drunkquote.completeDate|date|uppercase}}</li>
-        <button  (click)='toggleDetails(i)'>Toggle Details</button>
+<div class="container">
+  <h1>My Drunkquotes</h1>
+  <hr>
 
-    <app-drunkquote-detail *ngIf="drunkquote.showDescription" [drunkquote]='drunkquote' (isComplete)= 'deleteDrunkquote($event,i)'></app-drunkquote-detail>
-    
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngFor='let drunkquote of drunkquotes;let i = index'>
+        <div>
+          <h4 id={{i}} appStrikethrough>{{drunkquote.name}} due on {{drunkquote.completeDate|date|uppercase}}</h4>
+          <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+        </div>
+
+        <div *ngIf='drunkquote.showDescription'>
+          <app-drunkquote-detail  [drunkquote]='drunkquote' (isComplete) = 'deleteDrunkquote($event,i)'></app-drunkquote-detail>
+        </div>
+      </div>
     </div>
-</ul>
-<p *ngIf='drunkquotes.length > 6'>You have too many drunkquotes</p>
+  </div>
+
+  <p *ngIf='drunkquotes.length > 5'>You have too many drunkquotes</p>
+</div>
