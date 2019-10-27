@@ -7,6 +7,7 @@ import { DrunkquoteComponent } from './drunkquote/drunkquote.component';
 import { DrunkquoteDetailComponent } from './drunkquote-detail/drunkquote-detail.component';
 import { StrikethroughDirective } from './strikethrough.directive';
 import { DateCountPipe } from './date-count.pipe';
+import { DrunkquoteFormComponent } from './drunkquote-form/drunkquote-form.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DateCountPipe } from './date-count.pipe';
     DrunkquoteComponent,
     DrunkquoteDetailComponent,
     StrikethroughDirective,
-    DateCountPipe
+    DateCountPipe,
+    DrunkquoteFormComponent
   ],
   imports: [
     BrowserModule,
