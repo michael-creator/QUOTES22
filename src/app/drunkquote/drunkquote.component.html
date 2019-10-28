@@ -1,26 +1,26 @@
 <div class="container">
-  <h1>My Drunkquotes</h1>
-  <hr>
+  <div style="text-align:center"> 
+        <img width="300" alt="Angular Logo" src="/assets/image/drunk.gif">   </div> <ng-progress></ng-progress>
+    <h1>My Drunkquotes</h1>
+    <hr>
 
-  <div class="row">
-    <div class="col-md-6">
-      <div *ngFor='let drunkquote of drunkquotes;let i = index'>
-        <div>
-          <h4 id={{i}} appStrikethrough>{{drunkquote.name}} due on {{drunkquote.completeDate|date|uppercase}}</h4>
-          <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
-        </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div *ngFor='let drunkquote of drunkquotes;let i = index'>
+          <div>
+            <h4 id={{i}} appStrikethrough>{{drunkquote.name}} due on {{drunkquote.completeDate|date|uppercase}}</h4>
+            <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+          </div>
 
-        <div *ngIf='drunkquote.showDescription'>
-          <app-drunkquote-detail  [drunkquote]='drunkquote' (isComplete) = 'deleteDrunkquote($event,i)'></app-drunkquote-detail>
+          <div *ngIf='drunkquote.showDescription'>
+            <app-drunkquote-detail [drunkquote]='drunkquote' (isComplete)='deleteDrunkquote($event,i)'>
+            </app-drunkquote-detail>
+          </div>
         </div>
       </div>
+      <div class="col-md-6">
+        <app-drunkquote-form (addDrunkquote)="addNewDrunkquote($event)"></app-drunkquote-form>
+      </div>
     </div>
-    <div class="col-md-6">
-      <app-drunkquote-form (addDrunkquote)="addNewDrunkquote($event)"></app-drunkquote-form>
- </div>
+    <p *ngIf='drunkquotes.length > 7'>You have too many drunkquotes</p>
   </div>
-  <p *ngIf='drunkquotes.length > 7'>You have too many drunkquotes</p>
-</div>
-  
-
- 
