@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  ElementRef} from '@angular/core';
 import { Drunkquote } from '../drunkquote';
 
 
@@ -16,15 +16,22 @@ export class DrunkquoteComponent implements OnInit {
     new Drunkquote(4,'Benjamin Franklin','In wine there is wisdom, in beer there is Freedom, in water there is bacteria.',new Date(2019,10,9)),
     new Drunkquote(5,'Winston S. Churchill','A lady came up to me one day and said ‘Sir! You are drunk’, to which I replied ‘I am drunk today madam, and tomorrow I shall be sober, but you will still be ugly.',new Date(2019,10,9)),
   ];
+
+  ngAfterViewInit(){
+    //this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#1bbfa7';
+ }
+
   addNewDrunkquote(drunkquote){
     let drunkquoteLength = this.drunkquotes.length;
     drunkquote.id = drunkquoteLength+1;
     drunkquote.completeDate = new Date(drunkquote.completeDate)
     this.drunkquotes.push(drunkquote)
   }
+  
   toggleDetails(index){
     this.drunkquotes[index].showDescription = !this.drunkquotes[index].showDescription;
   }
+ 
   deleteDrunkquote(isComplete, index){
     if (isComplete) {
       let toDelete = confirm(`Are you sure you want to delete ${this.drunkquotes[index].name}?`)
@@ -35,7 +42,7 @@ export class DrunkquoteComponent implements OnInit {
     }
   }
   
-  constructor() { }
+  constructor(private elementRef: ElementRef) { }
  
   ngOnInit() {
   }
