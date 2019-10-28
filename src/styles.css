@@ -1,7 +1,7 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 body{
-    background-image: url('assets/image/back.jpeg');
+    background-image: url('assets/image/photo.jpeg');
     background-size: cover;
     /* background: no-repeat; */
 }
