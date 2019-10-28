@@ -18,7 +18,7 @@ export class DrunkquoteComponent implements OnInit {
   ];
 
   ngAfterViewInit(){
-    //this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#1bbfa7';
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#1bbfa7';
  }
 
   addNewDrunkquote(drunkquote){
