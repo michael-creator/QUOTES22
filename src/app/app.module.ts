@@ -22,7 +22,8 @@ import { AboutComponent } from './about/about.component';
     StrikethroughDirective,
     DateCountPipe,
     DrunkquoteFormComponent,
-    AboutComponent,
+    AboutComponent
+    
     
   ],
   imports: [
