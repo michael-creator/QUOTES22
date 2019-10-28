@@ -2,3 +2,5 @@
 <p>{{drunkquote.description}}</p>
 <p>This drunkquote will be complete in {{drunkquote.completeDate|dateCount}} days</p>
 <button (click)= 'drunkquoteDelete(true)' class="btn btn-outline-danger">Delete Drunkquote</button>
+<button (click)='upVotes()' class="btn btn-secondary">UpVotes {{drunkquote.upvotes}} </button>
+ <button (click)='downVotes()' class="btn btn-danger">DownVotes {{drunkquote.downvotes}} </button>

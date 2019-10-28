@@ -7,14 +7,24 @@
     <div class="row">
       <div class="col-md-6">
         <div *ngFor='let drunkquote of drunkquotes;let i = index'>
-          <div>
-            <h4 id={{i}} appStrikethrough>{{drunkquote.name}} due on {{drunkquote.completeDate|date|uppercase}}</h4>
-            <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+          <div class="card" style="width: 30rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{drunkquote.name}} due on {{drunkquote.completeDate|date|uppercase}}</h5>
+              <p class="card-text"></p>
+              <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button><br>
+
+
+            </div>
           </div>
 
           <div *ngIf='drunkquote.showDescription'>
-            <app-drunkquote-detail [drunkquote]='drunkquote' (isComplete)='deleteDrunkquote($event,i)'>
+            <app-drunkquote-detail 
+            [drunkquote]='drunkquote' 
+            (isComplete)='deleteDrunkquote($event,i)'
+              (upvotes)='upVotes($event,i)' 
+              (downvotes)='downVotes($event,i)'>
             </app-drunkquote-detail>
+
           </div>
         </div>
       </div>
